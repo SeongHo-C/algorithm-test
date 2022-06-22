@@ -1,0 +1,16 @@
+// 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
+
+const input = require('fs')
+  .readFileSync('예제.txt')
+  .toString()
+  .trim()
+  .split('\n');
+
+input.forEach((item) => {
+  const itemVal = item.split(' ').map((x) => Number(x));
+  const sum = itemVal[0] + itemVal[1];
+
+  if (sum !== 0) {
+    console.log(sum);
+  }
+});
