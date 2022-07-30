@@ -4,13 +4,12 @@ const input = require('fs')
   .readFileSync('예제.txt')
   .toString()
   .trim()
-  .toUpperCase()
-  .split('');
+  .toUpperCase();
 
 const arr = new Array(26).fill(0);
 
 for (let i = 0; i < input.length; i++) {
-  arr[input[i].charCodeAt() - 65]++;
+  arr[input.charCodeAt(i) - 65]++;
 }
 
 const max = Math.max(...arr);
