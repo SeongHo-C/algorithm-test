@@ -12,6 +12,13 @@ function solution(s) {
   //       return x;
   //     })
   //     .join('');
+  //   for (let x of s) {
+  //     if (x === 'A') {
+  //       answer += '#';
+  //     } else {
+  //       answer += x;
+  //     }
+  //   }
   answer = s;
   answer = answer.replace(/A/g, '#');
 
