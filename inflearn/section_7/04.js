@@ -14,7 +14,7 @@ function solution(arr) {
   //   }
   let answer = arr;
 
-  for (let i = 1; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     let tmp = arr[i];
     let j;
     for (j = i - 1; j >= 0; j--) {
