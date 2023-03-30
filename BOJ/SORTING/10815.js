@@ -14,7 +14,7 @@ const N = Number(input[0]);
 //   .map(Number)
 //   .sort((a, b) => a - b);
 
-// 해시 테이블
+// cardA를 반복하고 각 숫자에 대해 해시 테이블의 해당 속성을 true로 설정
 const cardA = input[1].split(' ').reduce((obj, num) => {
   obj[num] = true;
   return obj;
