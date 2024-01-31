@@ -1,19 +1,20 @@
+// 후위식 연산(postfix)
 function solution(s) {
   let answer;
   const stack = [];
 
-  [...s].forEach((v) => {
-    if (!isNaN(v)) stack.push(Number(v));
+  for (const x of s) {
+    if (!isNaN(x)) stack.push(Number(x));
     else {
       const B = stack.pop();
       const A = stack.pop();
 
-      if (v === '+') stack.push(A + B);
-      else if (v === '-') stack.push(A - B);
-      else if (v === '*') stack.push(A * B);
-      else if (v === '/') stack.push(A / B);
+      if (x === '+') stack.push(A + B);
+      else if (x === '-') stack.push(A - B);
+      else if (x === '*') stack.push(A * B);
+      else if (x === '/') stack.push(A / B);
     }
-  });
+  }
 
   answer = stack[0];
   return answer;
