@@ -7,13 +7,15 @@ function solution(s) {
   for (const bracket of s) {
     if (bracket === '(') {
       stack.push('(');
-      prevBracket = bracket;
     } else {
       stack.pop();
 
       if (prevBracket === '(') answer += stack.length;
       else answer++;
     }
+
+    prevBracket = bracket;
+    console.log(answer);
   }
 
   return answer;
