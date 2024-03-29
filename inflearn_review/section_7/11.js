@@ -17,8 +17,8 @@ function count(songs, capacity) {
 
 function solution(m, songs) {
   let answer;
-  const lt = Math.max(...songs); // 최소 용량
-  const rt = songs.reduce((a, b) => a + b); // 최대 용량
+  let lt = Math.max(...songs); // 최소 용량
+  let rt = songs.reduce((a, b) => a + b); // 최대 용량
 
   while (lt <= rt) {
     const mid = Math.floor((lt + rt) / 2);
