@@ -5,11 +5,13 @@ function solution(n) {
   function DFS(v) {
     if (v > 7) return;
 
-    // 전위순회
+    // 전위순회(부 → 왼 → 오)
     // answer += v + ' ';
     DFS(v * 2);
+    // 중위순회(왼 → 부 → 오)
+    // answer += v + ' ';
     DFS(v * 2 + 1);
-    // 후위순회
+    // 후위순회(왼 → 오 → 부)
     answer += v + ' ';
   }
   DFS(n);
