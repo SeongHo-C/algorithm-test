@@ -2,7 +2,7 @@
 function solution(n, f) {
   let answer;
   let flag = 0;
-  const memo = Array.from(Array(4), () => Array(4).fill(0));
+  const memo = Array.from(Array(n), () => Array(n).fill(0));
   const binomial_coefficient = Array.from({ length: n }, () => 0);
   const permutation = Array.from({ length: n }, () => 0);
   const ch = Array.from({ length: n + 1 }, () => 0);
