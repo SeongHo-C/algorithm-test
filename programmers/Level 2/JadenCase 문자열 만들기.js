@@ -1,14 +1,10 @@
 function solution(s) {
   let answer = '';
-  const lowered_s = s.toLowerCase();
-  let prev_alpha = ' ';
 
-  for (const alpha of lowered_s) {
-    if (prev_alpha === ' ' && alpha !== ' ') {
-      answer += alpha.toUpperCase();
-    } else answer += alpha;
-
-    prev_alpha = alpha;
+  for (let i = 0; i < s.length; i++) {
+    // s[i - 1] === undefined ⇨ i === 0
+    if (i === 0 || s[i - 1] === ' ') answer += s[i].toUpperCase();
+    else answer += s[i].toLowerCase();
   }
 
   return answer;
