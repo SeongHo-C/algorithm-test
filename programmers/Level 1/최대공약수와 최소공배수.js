@@ -1,26 +1,24 @@
+// 유클리드 호제법: 2개의 자연수 또는 정식의 최대공약수를 구하는 알고리즘
+
+// "2개의 자연수 a, b(a > b)에 대해서 a를 b로 나눈 나머지가 r일 때,
+// a와 b의 최대 공약수는 b와 r의 최대공약수와 같다."
+function gcd(a, b) {
+  while (b !== 0) {
+    r = a % b;
+    a = b;
+    b = r;
+  }
+
+  return a;
+}
+
+// "두 수 a와 b의 최소공배수는 a와 b의 곱을 a와 b의 최대공약수로 나눈 것과 같다."
+function lcm(a, b) {
+  return (a * b) / gcd(a, b);
+}
+
 function solution(n, m) {
-  const n_divisor = [];
-  const m_divisor = [];
-  let common_divisor;
-
-  for (let i = 1; i <= n; i++) {
-    if (n % i === 0) n_divisor.push(i);
-  }
-
-  for (let i = 1; i <= m; i++) {
-    if (m % i === 0) m_divisor.push(i);
-  }
-
-  common_divisor = n_divisor.filter((v) => m_divisor.includes(v));
-
-  let [a, b] = [n, m];
-  while (true) {
-    if (a === b) break;
-    else if (a < b) a += n;
-    else b += m;
-  }
-
-  return [Math.max(...common_divisor), a];
+  return [gcd(n, m), lcm(n, m)];
 }
 
 console.log(solution(3, 12));
