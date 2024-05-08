@@ -1,11 +1,15 @@
 function solution(t, p) {
-    let answer = 0;
+  let result = 0;
+  let lt = 0;
+  let rt = p.length;
 
-    for (let i = 0; i <= t.length - p.length; i++) {
-        if (Number(t.slice(i, i + p.length)) <= Number(p)) answer++;
-    }
+  while (rt <= t.length) {
+    if (t.slice(lt++, rt++) <= p) result++;
+  }
 
-    return answer;
+  return result;
 }
 
 console.log(solution('3141592', '271'));
+console.log(solution('500220839878', '7'));
+console.log(solution('10203', '15'));
