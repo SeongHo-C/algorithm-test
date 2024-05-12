@@ -3,15 +3,14 @@ function solution(s, n) {
 
   for (const char of s) {
     const ascii = char.charCodeAt();
+    let next_ascii = ascii + n;
 
     if (ascii >= 65 && ascii <= 90) {
-      let next = ascii + n;
-      if (next > 90) next -= 26;
-      answer += String.fromCharCode(next);
+      if (next_ascii > 90) next_ascii -= 26;
+      answer += String.fromCharCode(next_ascii);
     } else if (ascii >= 97 && ascii <= 122) {
-      let next = ascii + n;
-      if (next > 122) next -= 26;
-      answer += String.fromCharCode(next);
+      if (next_ascii > 122) next_ascii -= 26;
+      answer += String.fromCharCode(next_ascii);
     } else {
       answer += ' ';
     }
