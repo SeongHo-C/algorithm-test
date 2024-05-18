@@ -1,15 +1,18 @@
 function solution(s) {
-    const answer = [];
-    const map = new Map();
+  const result = [];
+  const map = new Map();
 
-    [...s].forEach((v, i) => {
-        const nearIdx = map.get(v);
-        map.set(v, i);
+  s.split('').forEach((alpha, idx) => {
+    const nearIdx = map.get(alpha);
 
-        nearIdx >= 0 ? answer.push(i - nearIdx) : answer.push(-1);
-    });
+    if (nearIdx >= 0) result[idx] = idx - nearIdx;
+    else result[idx] = -1;
 
-    return answer;
+    map.set(alpha, idx);
+  });
+
+  return result;
 }
 
-console.log(solution('aaaaaa'));
+console.log(solution('banana'));
+console.log(solution('foobar'));
