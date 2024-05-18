@@ -6,8 +6,8 @@ function solution(operations) {
 
     if (command === 'I') queue.push(parseInt(data));
     if (command === 'D' && queue.length > 0) {
-      const deleteIdx = data === '1' ? Math.max(...queue) : Math.min(...queue);
-      queue.splice(queue.indexOf(deleteIdx), 1);
+      const deleteNum = data === '1' ? Math.max(...queue) : Math.min(...queue);
+      queue.splice(queue.indexOf(deleteNum), 1);
     }
   });
 
