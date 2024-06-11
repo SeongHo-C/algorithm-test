@@ -1,14 +1,14 @@
 function solution(people, limit) {
   let boat_num = 0;
   const sorted_people = people.slice().sort((a, b) => a - b);
+  let i = 0;
+  let j = sorted_people.length - 1;
 
-  while (sorted_people.length > 0) {
+  while (i <= j) {
+    if (sorted_people[i] + sorted_people[j] <= limit) i++;
+    j--;
+
     boat_num++;
-
-    const max_w = sorted_people.pop();
-    const min_w = sorted_people[0];
-
-    if (min_w + max_w <= limit) sorted_people.shift();
   }
 
   return boat_num;
