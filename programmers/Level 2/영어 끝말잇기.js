@@ -1,19 +1,20 @@
 function solution(n, words) {
-  const game = [];
-  let befor_word = words[0][0];
-  let result;
+  const usedWords = [];
+  let beforeWord = '';
 
-  for (const word of words) {
-    if (!game.includes(word) && befor_word[befor_word.length - 1] === word[0]) game.push(word);
-    else {
-      result = [(game.length + 1) % n || n, Math.ceil((game.length + 1) / n)];
-      break;
+  for (let i = 0; i < words.length; i++) {
+    const currentWord = words[i];
+
+    // i > 0, 첫 번째 단어에 대한 특별한 처리
+    if (i > 0 && (beforeWord[beforeWord.length - 1] !== currentWord[0] || usedWords.includes(currentWord))) {
+      return [(i % n) + 1, Math.floor(i / n) + 1];
     }
 
-    befor_word = word;
+    usedWords.push(currentWord);
+    beforeWord = currentWord;
   }
 
-  return result || [0, 0];
+  return [0, 0];
 }
 
 console.log(solution(3, ['tank', 'kick', 'know', 'wheel', 'land', 'dream', 'mother', 'robot', 'tank']));
