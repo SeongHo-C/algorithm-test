@@ -5,11 +5,11 @@ order = 0
 """
 # 내 풀이 방법
 for i in range(9):
-  num = int(input())
+    num = int(input())
 
-  if max_value < num: 
-    max_value = num
-    order = i + 1
+    if max_value < num: 
+        max_value = num
+        order = i + 1
 """
 
 # 리스트 컴프리헨션을 사용하여 입력을 간결하게 받는 방법

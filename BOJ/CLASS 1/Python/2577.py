@@ -6,7 +6,7 @@ result = str(a * b * c)
 """
 # 내 풀이 방법
 for i in range(10):
-  print(result.count(str(i)))
+    print(result.count(str(i)))
 """
 
 # 리스트 컴프리헨션 사용
